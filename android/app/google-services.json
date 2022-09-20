@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "247310240666",
+    "project_id": "bhavipath",
+    "storage_bucket": "bhavipath.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247310240666:android:d01587a0bce08d7bf44823",
+        "android_client_info": {
+          "package_name": "com.example.bhavipath"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247310240666-j4eg1hd5qick947jv30t6hppaverl30j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC227DrkgwvCKAcOdPjg1l_eUMmhr9E9ZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247310240666-j4eg1hd5qick947jv30t6hppaverl30j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

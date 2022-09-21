@@ -1,3 +1,4 @@
+import 'package:bhavipath/screens/course_screen.dart';
 import 'package:bhavipath/screens/reset_password.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -39,7 +40,7 @@ class _SignInScreenState extends State<SignInScreen> {
         HelperFunctions.saveuserLoggedInSharePreference(true);
 
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            context, MaterialPageRoute(builder: (context) => CourseScreen()));
       }
     });
   }

@@ -1,3 +1,4 @@
+import 'package:bhavipath/screens/course_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -107,7 +108,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => HomeScreen()))
+                                        builder: (context) => CourseScreen()))
                                 .onError((error, stackTrace) {
                               print("Error ${error.toString()}");
                             });

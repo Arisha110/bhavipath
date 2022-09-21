@@ -4,7 +4,8 @@ import '../constants/size.dart';
 import '../models/category.dart';
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({Key? key}) : super(key: key);
+  final Category category;
+  const CategoryCard({Key? key, required this.category}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,19 +24,19 @@ class CategoryCard extends StatelessWidget {
               )
             ]),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Align(
-              alignment: Alignment.topRight,
+              alignment: Alignment.center,
               child: Image.asset(
-                Category.thumbnail,
+                category.thumbnail,
                 height: kCategoryCardImageSize,
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
-            Text(Category.name),
+            Text(category.name),
             Text(
               '${category.noOfCourses} courses',
               style: Theme.of(context).textTheme.bodySmall,

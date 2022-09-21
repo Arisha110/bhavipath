@@ -1,6 +1,10 @@
+import 'package:bhavipath/screens/signin.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../helper.dart';
+import '../pagestate.dart';
 import '../widgets/category_card.dart';
 import '../widgets/circle_button.dart';
 import '../models/category.dart';
@@ -66,7 +70,7 @@ class Body extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              childAspectRatio: 0.8,
+              childAspectRatio: 1,
               crossAxisSpacing: 20,
               mainAxisSpacing: 24,
             ),
@@ -74,7 +78,40 @@ class Body extends StatelessWidget {
               return CategoryCard(
                 category: categoryList[index],
               );
-            })
+            }),
+        Container(
+          width: 150,
+          height: 50,
+          margin: const EdgeInsets.fromLTRB(0, 20, 0, 10),
+          child: ElevatedButton(
+            onPressed: () {
+              // onTap();
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PageState()));
+            },
+            child: Center(
+              child: Text(
+                'Take the Quiz',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            style: ButtonStyle(
+                shadowColor: MaterialStateProperty.all<Color>(Colors.black),
+                backgroundColor: MaterialStateProperty.resolveWith((states) {
+                  if (states.contains(MaterialState.pressed)) {
+                    return Colors.black;
+                  }
+                  return Color(0xff131040);
+                }),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)))),
+          ),
+        ),
       ],
     );
   }
@@ -87,7 +124,7 @@ class AppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-      height: 200,
+      height: 130,
       width: double.infinity,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -96,8 +133,8 @@ class AppBar extends StatelessWidget {
         ),
         gradient: LinearGradient(
           colors: [
-            Color(114070),
-            Color(114070),
+            Colors.blue,
+            Colors.lightBlueAccent,
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -113,9 +150,18 @@ class AppBar extends StatelessWidget {
                 'Hello',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              CircleButton(
-                icon: Icons.notifications,
-                onPressed: () {},
+              ElevatedButton(
+
+                onPressed: () {
+                  FirebaseAuth.instance.signOut().then((value) {
+                    print("Signed Out");
+                    HelperFunctions.saveuserLoggedInSharePreference(false);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SignInScreen()));
+                  });
+                }, child: Icon(Icons.logout_rounded),
               )
             ],
           )

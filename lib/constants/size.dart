@@ -1,1 +1,1 @@
-const kCategoryCardImageSize = 120.0;
+const kCategoryCardImageSize = 80.0;

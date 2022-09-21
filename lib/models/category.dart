@@ -8,21 +8,23 @@ class Category {
 
 List<Category> categoryList = [
   Category(
-    name: 'Development',
+    name: 'Engineering',
     noOfCourses: 35,
-    thumbnail:
-        'https//banner2.cleanpng.com/20180624/sfz/kisspng-laptop-display-device-multimedia-laptop-mockup-5b2f1c0021b2b9.715482301529814016138.jpg',
+    thumbnail: 'android/assets/Group 14.png',
   ),
   Category(
-    name: 'Designing',
+    name: 'Medical',
     noOfCourses: 40,
-    thumbnail:
-        'https://banner2.cleanpng.com/20180624/sfz/kisspng-laptop-display-device-multimedia-laptop-mockup-5b2f1c0021b2b9.715482301529814016138.jpg',
+    thumbnail: 'android/assets/Group 14.png',
   ),
   Category(
-    name: 'Programming',
+    name: 'Law',
     noOfCourses: 56,
-    thumbnail:
-        'https://banner2.cleanpng.com/20180624/sfz/kisspng-laptop-display-device-multimedia-laptop-mockup-5b2f1c0021b2b9.715482301529814016138.jpg',
+    thumbnail: 'android/assets/Group 14.png',
+  ),
+  Category(
+    name: 'Other Courses',
+    noOfCourses: 56,
+    thumbnail: 'android/assets/Group 14.png',
   ),
 ];

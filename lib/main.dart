@@ -1,5 +1,9 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:bhavipath/pagestate.dart';
+import 'package:bhavipath/ques_widget.dart';
+import 'package:bhavipath/screens/course_screen.dart';
 import 'package:bhavipath/screens/home_screen.dart';
+import 'package:bhavipath/screens/quiz.dart';
 import 'package:bhavipath/screens/signin.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -90,7 +94,7 @@ class _MyAppState extends State<MyApp> {
             backgroundColor: Color(0xffFFB2A9),
             nextScreen: userIsLoggedIn != null
                 ? userIsLoggedIn
-                    ? HomeScreen()
+                    ? CourseScreen()
                     : SignInScreen()
                 : Container(
                     color: Colors.black12,

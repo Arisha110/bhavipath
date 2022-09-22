@@ -64,21 +64,30 @@ class Body extends StatelessWidget {
             ],
           ),
         ),
-        GridView.builder(
-            shrinkWrap: true,
-            itemCount: categoryList.length,
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 1,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 24,
+        Container(
+          width: double.infinity,
+          height: 400,
+          child: Scrollbar(
+            child: Container(
+              child: GridView.builder(
+                  shrinkWrap: true,
+                  itemCount: categoryList.length,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 1,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 24,
+                  ),
+                  itemBuilder: (context, index) {
+                    return CategoryCard(
+                      category: categoryList[index],
+                    );
+                  }),
             ),
-            itemBuilder: (context, index) {
-              return CategoryCard(
-                category: categoryList[index],
-              );
-            }),
+          ),
+        ),
         Container(
           width: 150,
           height: 50,
@@ -151,7 +160,6 @@ class AppBar extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               ElevatedButton(
-
                 onPressed: () {
                   FirebaseAuth.instance.signOut().then((value) {
                     print("Signed Out");
@@ -161,7 +169,8 @@ class AppBar extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => SignInScreen()));
                   });
-                }, child: Icon(Icons.logout_rounded),
+                },
+                child: Icon(Icons.logout_rounded),
               )
             ],
           )

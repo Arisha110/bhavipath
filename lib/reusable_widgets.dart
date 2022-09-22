@@ -2,6 +2,7 @@ import 'package:bhavipath/screens/course_screen.dart';
 import 'package:bhavipath/screens/signin.dart';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 Container reusableTextField(String text, IconData icon, bool isPasswordType,
     TextEditingController controller) {
@@ -79,7 +80,7 @@ Container SignInSignUpButton(
             if (states.contains(MaterialState.pressed)) {
               return Colors.black;
             }
-            return Color(0xff131040);
+            return Color(0xff00C1FF);
           }),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)))),
@@ -117,6 +118,36 @@ Container Cancel(BuildContext context, bool isSignIn) {
           }),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)))),
+    ),
+  );
+}
+
+Container branch(String name) {
+  return Container(
+    padding: EdgeInsets.fromLTRB(25, 15, 20, 15),
+    margin: EdgeInsets.fromLTRB(25, 15, 25, 0),
+    width: double.infinity,
+    height: 60,
+    decoration: BoxDecoration(
+      shape: BoxShape.rectangle,
+      borderRadius: BorderRadius.all(
+        Radius.circular(10.0),
+      ),
+      color: Color(0xff001039),
+    ),
+    child: Row(
+      children: [
+        Text(
+          "${name}",
+          style: GoogleFonts.firaSans(
+              fontWeight: FontWeight.w400, fontSize: 20, color: Colors.white),
+        ),
+        Expanded(child: Container()),
+        Icon(
+          Icons.arrow_forward_ios,
+          color: Colors.white,
+        ),
+      ],
     ),
   );
 }

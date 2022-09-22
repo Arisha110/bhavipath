@@ -51,7 +51,14 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xffFFB2A9),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Color(0xff001039), Color(0xff01091d)],
+              begin: FractionalOffset(0.0, 1.0),
+              end: FractionalOffset(0.0, 0.0),
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp),
+        ),
         child: Column(
           children: [
             SizedBox(
@@ -68,7 +75,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     height: 150,
                     width: 150,
                     child: Image(
-                      image: AssetImage('android/assets/Group 14.png'),
+                      image: AssetImage('android/assets/bhavipath.png'),
                     ),
                   ),
                 ),

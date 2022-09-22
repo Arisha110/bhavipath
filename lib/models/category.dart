@@ -23,6 +23,16 @@ List<Category> categoryList = [
     thumbnail: 'android/assets/Group 14.png',
   ),
   Category(
+    name: 'Humanities',
+    noOfCourses: 56,
+    thumbnail: 'android/assets/Group 14.png',
+  ),
+  Category(
+    name: 'Management',
+    noOfCourses: 56,
+    thumbnail: 'android/assets/Group 14.png',
+  ),
+  Category(
     name: 'Other Courses',
     noOfCourses: 56,
     thumbnail: 'android/assets/Group 14.png',

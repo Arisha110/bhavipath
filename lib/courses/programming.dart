@@ -10,6 +10,11 @@ class ProgrammingPage extends StatefulWidget {
 class _ProgrammingPageState extends State<ProgrammingPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(
+        child: Text('Coding'),
+      ),
+    );
+    ;
   }
 }

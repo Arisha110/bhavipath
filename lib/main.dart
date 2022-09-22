@@ -5,8 +5,12 @@ import 'package:bhavipath/screens/course_screen.dart';
 import 'package:bhavipath/screens/home_screen.dart';
 import 'package:bhavipath/screens/quiz.dart';
 import 'package:bhavipath/screens/signin.dart';
+import 'package:bhavipath/splashscreen.dart';
+import 'package:bhavipath/to-do/task_data.dart';
+import 'package:bhavipath/to-do/task_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'helper.dart';
 
@@ -57,41 +61,43 @@ class _MyAppState extends State<MyApp> {
                 SizedBox(
                   height: 60,
                 ),
-                Expanded(
+                Container(
+                  height: 40,
+                  width: double.infinity,
                   child: Image(
-                    image: AssetImage('android/assets/Group 13.png'),
+                    image: AssetImage('android/assets/bhavipath.png'),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      child: Text(
-                        'CHAT',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xff131040)),
-                      ),
-                    ),
-                    Container(
-                      child: Text(
-                        'IFY',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xff131040)),
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     Container(
+                //       child: Text(
+                //         'CHAT',
+                //         style: TextStyle(
+                //             fontSize: 20,
+                //             fontWeight: FontWeight.bold,
+                //             color: Color(0xff131040)),
+                //       ),
+                //     ),
+                //     Container(
+                //       child: Text(
+                //         'IFY',
+                //         style: TextStyle(
+                //             fontSize: 20,
+                //             fontWeight: FontWeight.bold,
+                //             color: Color(0xff131040)),
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 Container(
                   height: 70,
                 ),
               ],
             )),
             splashIconSize: 250,
-            backgroundColor: Color(0xffFFB2A9),
+            backgroundColor: Color(0xff001039),
             nextScreen: userIsLoggedIn != null
                 ? userIsLoggedIn
                     ? CourseScreen()

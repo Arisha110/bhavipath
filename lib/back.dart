@@ -1,10 +1,12 @@
 import 'package:bhavipath/courses/dev.dart';
+import 'package:bhavipath/courses/programming.dart';
 import 'package:bhavipath/screens/course_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bhavipath/pagestate.dart';
 import 'constants/list.dart';
 import 'courses/design.dart';
+import 'navpage.dart';
 
 class Navi extends StatefulWidget {
   const Navi({Key? key}) : super(key: key);
@@ -45,12 +47,27 @@ class _NaviState extends State<Navi> {
 
   void nav() {
     print(ans);
-    if (ans[0] == 'Yes' && ans[1] == 'No' && ans[2] == 'Yes') {
+    if (ans[0] == 'Yes' && ans[1] == 'Yes' && ans[2] == 'Yes') {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => NavPage()));
+    } else if (ans[0] == 'Yes' && ans[1] == 'Yes' && ans[2] == 'No') {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => ProgrammingPage()));
+    } else if (ans[0] == 'Yes' && ans[1] == 'No' && ans[2] == 'Yes') {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => DesignPage()));
-    } else if (ans[0] == 'Yes' && ans[1] == 'Yes' && ans[2] == 'Yes') {
+    } else if (ans[0] == 'No' && ans[1] == 'Yes' && ans[2] == 'Yes') {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => DevPage()));
+    } else if (ans[0] == 'No' && ans[1] == 'No' && ans[2] == 'Yes') {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => DesignPage()));
+    } else if (ans[0] == 'No' && ans[1] == 'Yes' && ans[2] == 'No') {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => DevPage()));
+    } else if (ans[0] == 'Yes' && ans[1] == 'No' && ans[2] == 'No') {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => ProgrammingPage()));
     } else {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => CourseScreen()));

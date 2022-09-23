@@ -5,20 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
+import 'courses/design.dart';
 import 'courses/dev.dart';
 import 'courses/extra.dart';
 import 'courses/others.dart';
 
-class NavPage extends StatefulWidget {
-  const NavPage({Key? key}) : super(key: key);
+class NavPage1 extends StatefulWidget {
+  const NavPage1({Key? key}) : super(key: key);
 
   @override
-  State<NavPage> createState() => _NavPageState();
+  State<NavPage1> createState() => _NavPage1State();
 }
 
-class _NavPageState extends State<NavPage> {
+class _NavPage1State extends State<NavPage1> {
   List pages = [
-    DevPage(),
+    DesignPage(),
     Extra(),
     ChangeNotifierProvider(
       create: (context) => TaskData(),

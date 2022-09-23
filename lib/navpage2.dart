@@ -1,3 +1,4 @@
+import 'package:bhavipath/courses/programming.dart';
 import 'package:bhavipath/screens/course_screen.dart';
 import 'package:bhavipath/to-do/task_data.dart';
 import 'package:bhavipath/to-do/task_screen.dart';
@@ -5,20 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
+import 'courses/design.dart';
 import 'courses/dev.dart';
 import 'courses/extra.dart';
 import 'courses/others.dart';
 
-class NavPage extends StatefulWidget {
-  const NavPage({Key? key}) : super(key: key);
+class NavPage2 extends StatefulWidget {
+  const NavPage2({Key? key}) : super(key: key);
 
   @override
-  State<NavPage> createState() => _NavPageState();
+  State<NavPage2> createState() => _NavPage2State();
 }
 
-class _NavPageState extends State<NavPage> {
+class _NavPage2State extends State<NavPage2> {
   List pages = [
-    DevPage(),
+    ProgrammingPage(),
     Extra(),
     ChangeNotifierProvider(
       create: (context) => TaskData(),

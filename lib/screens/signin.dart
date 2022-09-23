@@ -58,6 +58,7 @@ class _SignInScreenState extends State<SignInScreen> {
               end: FractionalOffset(0.0, 0.0),
               stops: [0.0, 1.0],
               tileMode: TileMode.clamp),
+          // image: DecorationImage(image: AssetImage("android/assets/a[[.png")),
         ),
         child: Column(
           children: [
@@ -75,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     height: 150,
                     width: 150,
                     child: Image(
-                      image: AssetImage('android/assets/bhavipath.png'),
+                      image: AssetImage('android/assets/bp logo.png'),
                     ),
                   ),
                 ),

@@ -62,10 +62,10 @@ class _MyAppState extends State<MyApp> {
                   height: 60,
                 ),
                 Container(
-                  height: 40,
+                  height: 190,
                   width: double.infinity,
                   child: Image(
-                    image: AssetImage('android/assets/bhavipath.png'),
+                    image: AssetImage('android/assets/bp logo.png'),
                   ),
                 ),
                 // Row(
@@ -91,13 +91,10 @@ class _MyAppState extends State<MyApp> {
                 //     ),
                 //   ],
                 // ),
-                Container(
-                  height: 70,
-                ),
               ],
             )),
             splashIconSize: 250,
-            backgroundColor: Color(0xff001039),
+            backgroundColor: Color(0xff01091d),
             nextScreen: userIsLoggedIn != null
                 ? userIsLoggedIn
                     ? CourseScreen()

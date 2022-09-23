@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import '../constants/size.dart';
 import '../eng/engpage.dart';
 import '../models/category.dart';
+import '../screens/course_screen.dart';
 
 class CategoryCard extends StatelessWidget {
   final Category category;
-  const CategoryCard({Key? key, required this.category}) : super(key: key);
+
+  CategoryCard({Key? key, required this.category}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

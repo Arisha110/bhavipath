@@ -151,3 +151,37 @@ Container branch(String name) {
     ),
   );
 }
+
+Container skill(String name, String extra) {
+  return Container(
+    padding: EdgeInsets.fromLTRB(25, 15, 20, 15),
+    margin: EdgeInsets.fromLTRB(25, 15, 25, 0),
+    width: double.infinity,
+    height: 80,
+    decoration: BoxDecoration(
+      shape: BoxShape.rectangle,
+      borderRadius: BorderRadius.all(
+        Radius.circular(10.0),
+      ),
+      color: Color(0xff001039),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "${name}",
+          style: GoogleFonts.firaSans(
+              fontWeight: FontWeight.w400, fontSize: 20, color: Colors.white),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Text(
+          "${extra}",
+          style: GoogleFonts.firaSans(
+              fontWeight: FontWeight.w400, fontSize: 10, color: Colors.white),
+        ),
+      ],
+    ),
+  );
+}

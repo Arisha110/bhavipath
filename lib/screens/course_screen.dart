@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../blank.dart';
 import '../helper.dart';
 import '../pagestate.dart';
 import '../widgets/category_card.dart';
@@ -37,7 +38,19 @@ class _CourseScreenState extends State<CourseScreen> {
 }
 
 class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+  // List nav = [
+  //   CourseScreen(),
+  //   BlankScreen(),
+  //   BlankScreen(),
+  //   BlankScreen(),
+  //   BlankScreen(),
+  //   BlankScreen()
+  // ];
+  //
+  // void func(int index, context) {
+  //   Navigator.push(
+  //       context, MaterialPageRoute(builder: (context) => nav[index]));
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +96,7 @@ class Body extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return CategoryCard(
                       category: categoryList[index],
+
                     );
                   }),
             ),
@@ -127,7 +141,7 @@ class Body extends StatelessWidget {
 }
 
 class AppBar extends StatelessWidget {
-  const AppBar({Key? key}) : super(key: key);
+  AppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

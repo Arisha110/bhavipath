@@ -1,8 +1,10 @@
+import 'package:bhavipath/eng/hspage.dart';
 import 'package:bhavipath/eng/skillpage.dart';
 import 'package:flutter/material.dart';
 
 import '../courses/others.dart';
 import 'branchpage.dart';
+import 'jobpage.dart';
 
 class EngPage extends StatefulWidget {
   const EngPage({Key? key}) : super(key: key);
@@ -124,7 +126,7 @@ class _EngPageState extends State<EngPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MyApp()));
+                          MaterialPageRoute(builder: (context) => ExamPage()));
                     },
                     child: Container(
                       padding: const EdgeInsets.all(10),
@@ -165,41 +167,48 @@ class _EngPageState extends State<EngPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(.1),
-                            blurRadius: 4.0,
-                            spreadRadius: .05,
-                          )
-                        ]),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                            height: 100,
-                            width: 150,
-                            child: Image(
-                              image: AssetImage("android/assets/Group 14.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => JobPage()));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(.1),
+                              blurRadius: 4.0,
+                              spreadRadius: .05,
+                            )
+                          ]),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                              height: 100,
+                              width: 150,
+                              child: Image(
+                                image:
+                                    AssetImage("android/assets/Group 14.png"),
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 40,
-                        ),
-                        Text("Job Opportunities"),
-                        Text(
-                          'to develop',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        )
-                      ],
+                          const SizedBox(
+                            height: 40,
+                          ),
+                          Text("Job Opportunities"),
+                          Text(
+                            'to develop',
+                            style: Theme.of(context).textTheme.bodySmall,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],

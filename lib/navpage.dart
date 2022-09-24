@@ -40,16 +40,16 @@ class _NavPageState extends State<NavPage> {
     return Scaffold(
       body: pages[currentIndex],
       bottomNavigationBar: Container(
-        color: Color(0xffE1E0EB),
+        color: Color(0xff01091d),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
           child: GNav(
               selectedIndex: currentIndex,
               onTabChange: onTap,
-              backgroundColor: Color(0xffE1E0EB),
-              color: Color(0xff131040),
-              activeColor: Color(0xffE1E0EB),
-              tabBackgroundColor: Color(0xff131040),
+              backgroundColor: Color(0xff01091d),
+              color: Color(0xffE1E0EB),
+              activeColor: Color(0xff01091d),
+              tabBackgroundColor: Color(0xffE1E0EB),
               gap: 8,
               padding: EdgeInsets.all(16),
               tabs: [

@@ -250,7 +250,6 @@ class _DesignPageState extends State<DesignPage> {
                               )
                             ],
                             image: DecorationImage(
-                                fit: BoxFit.fill,
                                 image:
                                     AssetImage('android/assets/jd card.png'))),
                       ),
@@ -275,7 +274,6 @@ class _DesignPageState extends State<DesignPage> {
                               )
                             ],
                             image: DecorationImage(
-                                fit: BoxFit.fill,
                                 image:
                                     AssetImage('android/assets/cd card3.png'))),
                       ),
@@ -296,7 +294,6 @@ class _DesignPageState extends State<DesignPage> {
                               )
                             ],
                             image: DecorationImage(
-                                fit: BoxFit.fill,
                                 image:
                                     AssetImage('android/assets/gd card.png'))),
                       ),
@@ -321,7 +318,6 @@ class _DesignPageState extends State<DesignPage> {
                               )
                             ],
                             image: DecorationImage(
-                                fit: BoxFit.fill,
                                 image:
                                     AssetImage('android/assets/fd card.png'))),
                       ),
@@ -342,7 +338,6 @@ class _DesignPageState extends State<DesignPage> {
                               )
                             ],
                             image: DecorationImage(
-                                fit: BoxFit.fill,
                                 image:
                                     AssetImage('android/assets/id card2.png'))),
                       ),

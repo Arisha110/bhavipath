@@ -22,7 +22,9 @@ class _QuizState extends State<Quiz> {
           Text(
             'QUIZ',
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 25, color: Colors.blue),
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+                color: Color(0xffE1E0EB)),
           ),
           Expanded(
             child: Center(

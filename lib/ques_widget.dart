@@ -38,8 +38,9 @@ class QuestionsWidget extends StatelessWidget {
     required Question question,
   }) =>
       Scaffold(
+        backgroundColor: Color(0xff01091d),
         body: Container(
-          padding: EdgeInsets.all(30),
+          padding: EdgeInsets.fromLTRB(50, 10, 50, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -48,14 +49,18 @@ class QuestionsWidget extends StatelessWidget {
               ),
               Text(
                 'QUIZ',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xffE1E0EB)),
               ),
               SizedBox(
                 height: 100,
               ),
               Text(
                 question.text,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: Color(0xffE1E0EB)),
               ),
               SizedBox(
                 height: 12,

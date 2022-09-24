@@ -19,7 +19,8 @@ final questions = [
     selectedOption: Option(code: 'A', text: 'Yes'),
   ),
   Question(
-      text: "Do you like being creative around colour schemes ?",
+      text:
+          "Do you like being creative or get fascinated by visual designs and patterns ?",
       options: [
         Option(code: 'A.', text: 'Yes'),
         Option(code: 'B.', text: 'No'),

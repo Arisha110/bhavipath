@@ -19,9 +19,10 @@ class _ExtraState extends State<Extra> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff01091d),
       appBar: AppBar(
           elevation: 0,
-          backgroundColor: Color(0xff0001039),
+          backgroundColor: Color(0xff01091d),
           title: Container(
             padding: EdgeInsets.all(70),
             child: Text(
@@ -41,6 +42,29 @@ class _ExtraState extends State<Extra> {
             child: Column(
               children: [
                 SizedBox(height: 10),
+                // GestureDetector(
+                //   onTap: () {
+                //     Navigator.push(context,
+                //         MaterialPageRoute(builder: (context) => Android()));
+                //   },
+                //   child: Container(
+                //     height: 160,
+                //     width: double.infinity,
+                //     margin: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+                //     decoration: BoxDecoration(
+                //         borderRadius: BorderRadius.circular(20),
+                //         boxShadow: [
+                //           BoxShadow(
+                //             color: Colors.black.withOpacity(.1),
+                //             blurRadius: 4.0,
+                //             spreadRadius: .05,
+                //           )
+                //         ],
+                //         image: DecorationImage(
+                //           image: AssetImage('android/assets/as3.png'),
+                //         )),
+                //   ),
+                // ),
                 Container(
                   height: 170,
                   width: double.infinity,
@@ -71,7 +95,7 @@ class _ExtraState extends State<Extra> {
                         height: 20,
                       ),
                       Text(
-                        'Actuarial Science is the discipline that applies mathematical and statistical methods to assess risk in insurance etc.',
+                        'Actuarial Science is the discipline that applies mathematical and statistical methods to access risk in insurance, etc.',
                         style: GoogleFonts.firaSans(
                             fontWeight: FontWeight.w400,
                             fontSize: 18,

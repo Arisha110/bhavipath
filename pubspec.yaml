@@ -67,14 +67,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-      - android/assets/bp logo.png
-      - android/assets/bp.png
-      - android/assets/law card2.png
-      - android/assets/med card.png
-      - android/assets/oth card.png
-      - android/assets/hum card2.png
-      - android/assets/eng card2.png
-      - android/assets/mgmt card2.png
+      - android/assets/
+
 
 
 

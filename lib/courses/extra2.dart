@@ -19,9 +19,10 @@ class _Extra2State extends State<Extra2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff01091d),
       appBar: AppBar(
           elevation: 0,
-          backgroundColor: Color(0xff0001039),
+          backgroundColor: Color(0xff01091d),
           title: Container(
             padding: EdgeInsets.all(70),
             child: Text(

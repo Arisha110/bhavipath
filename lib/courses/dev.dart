@@ -3,8 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../helper.dart';
+import '../screens/course_screen.dart';
 import '../screens/signin.dart';
 import '../web/android.dart';
 import '../web/backend.dart';
@@ -20,11 +22,47 @@ class DevPage extends StatefulWidget {
 }
 
 class _DevPageState extends State<DevPage> {
+  _launchURLFE() async {
+    var url = Uri.parse("https://www.roadmap.sh/frontend");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURlBE() async {
+    var url = Uri.parse("https://www.roadmap.sh/backend");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLADR() async {
+    var url = Uri.parse("https://www.roadmap.sh/android");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLBC() async {
+    var url = Uri.parse("https://www.roadmap.sh/blockchain");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xffE1E0EB),
         child: Column(children: [
           Container(
             width: double.infinity,
@@ -69,42 +107,40 @@ class _DevPageState extends State<DevPage> {
             leading: IconButton(
               color: Color(0xff131040),
               onPressed: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => ProfileScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CourseScreen()));
               },
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.home),
             ),
             title: Text(
-              "Profile",
+              "Home",
               style: TextStyle(fontSize: 16, color: Color(0xff131040)),
             ),
           ),
+          // ListTile(
+          //   leading: IconButton(
+          //       icon: Icon(Icons.event_note_rounded),
+          //       color: Color(0xff131040),
+          //       onPressed: () => ChangeNotifierProvider(
+          //             create: (context) => TaskData(),
+          //             child: MaterialApp(
+          //               debugShowCheckedModeBanner: false,
+          //               home: TasksScreen(),
+          //             ),
+          //           )),
+          //   title: Text(
+          //     "Notes",
+          //     style: TextStyle(fontSize: 16, color: Color(0xff131040)),
+          //   ),
+          // ),
           ListTile(
             leading: IconButton(
-              icon: Icon(Icons.settings),
-              color: Color(0xff131040),
-              onPressed: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => SettingsScreen()));
-              },
-            ),
-            title: Text(
-              "Settings",
-              style: TextStyle(fontSize: 16, color: Color(0xff131040)),
-            ),
-          ),
-          ListTile(
-            leading: IconButton(
-              icon: Icon(Icons.help),
+              icon: Icon(Icons.subscriptions),
               color: Color(0xff131040),
               onPressed: () {},
             ),
             title: Text(
-              "Help",
+              "Subscriptions",
               style: TextStyle(fontSize: 16, color: Color(0xff131040)),
             ),
           ),
@@ -141,13 +177,14 @@ class _DevPageState extends State<DevPage> {
         ]),
       ),
       appBar: AppBar(
-        backgroundColor: Color(0xff0001039),
+        backgroundColor: Color(0xff01091d),
         title: Text(
           "Development",
           style: TextStyle(color: Color(0xffE1E0EB)),
         ),
       ),
       body: Container(
+          color: Color(0xff01091d),
           width: double.infinity,
           height: 550,
           child: SingleChildScrollView(
@@ -158,18 +195,12 @@ class _DevPageState extends State<DevPage> {
                 Row(
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Frontend()));
-                      },
+                      onTap: _launchURLFE,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
                         margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -177,44 +208,31 @@ class _DevPageState extends State<DevPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'Frontend',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                              image: AssetImage('android/assets/fe card.png'),
+                            )),
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Backend()));
-                      },
+                      onTap: _launchURlBE,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
                         margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(.1),
-                                blurRadius: 4.0,
-                                spreadRadius: .05,
-                              )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'Backend',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(.1),
+                              blurRadius: 4.0,
+                              spreadRadius: .05,
+                            )
+                          ],
+                          image: DecorationImage(
+                            image: AssetImage('android/assets/be card.png'),
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -222,16 +240,12 @@ class _DevPageState extends State<DevPage> {
                 Row(
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Android()));
-                      },
+                      onTap: _launchURLADR,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
                         margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -239,30 +253,19 @@ class _DevPageState extends State<DevPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'Android',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                              image: AssetImage('android/assets/ard card.png'),
+                            )),
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Blockchain()));
-                      },
+                      onTap: _launchURLBC,
                       child: Container(
                         height: 190,
                         width: 160,
                         margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -270,15 +273,10 @@ class _DevPageState extends State<DevPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'Blockchain',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                              image: AssetImage('android/assets/bc card2.png'),
+                            )),
                       ),
                     ),
                   ],

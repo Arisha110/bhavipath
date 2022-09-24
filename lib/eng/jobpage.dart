@@ -82,18 +82,18 @@ class _JobPageState extends State<JobPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff01091d),
       appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Color(0xff01091d),
           title: Container(
-            padding: EdgeInsets.all(90),
+            padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
             child: Text(
               'Job Opportunities',
               style: GoogleFonts.firaSans(
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
-                  color: Color(0xff0D0C0C)),
+                  color: Color(0xffE1E0EB)),
             ),
           )),
       body: Container(
@@ -109,12 +109,10 @@ class _JobPageState extends State<JobPage> {
                     GestureDetector(
                       onTap: _launchURLSDE,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        padding: EdgeInsets.fromLTRB(0, 55, 0, 0),
-                        margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -122,43 +120,19 @@ class _JobPageState extends State<JobPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Column(
-                          children: [
-                            Text(
-                              'Software',
-                              style: GoogleFonts.firaSans(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 20,
-                                  color: Color(0xff0D0C0C)),
-                            ),
-                            Text(
-                              'Development',
-                              style: GoogleFonts.firaSans(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 20,
-                                  color: Color(0xff0D0C0C)),
-                            ),
-                            Text(
-                              'Engineer',
-                              style: GoogleFonts.firaSans(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 20,
-                                  color: Color(0xff0D0C0C)),
-                            ),
-                          ],
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'android/assets/SOFTWARE DEVELOPMENT ENGINEER.png'))),
                       ),
                     ),
                     GestureDetector(
                       onTap: _launchURCS,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -166,15 +140,10 @@ class _JobPageState extends State<JobPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'Civil Services',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'android/assets/civil services.png'))),
                       ),
                     ),
                   ],
@@ -184,11 +153,10 @@ class _JobPageState extends State<JobPage> {
                     GestureDetector(
                       onTap: _launchURLCyb,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -196,25 +164,19 @@ class _JobPageState extends State<JobPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'Cyber Security',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'android/assets/cyber security.png'))),
                       ),
                     ),
                     GestureDetector(
                       onTap: _launchURLEH,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -222,15 +184,10 @@ class _JobPageState extends State<JobPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'Ethical Hacker',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'android/assets/ethical hacker.png'))),
                       ),
                     ),
                   ],
@@ -240,11 +197,10 @@ class _JobPageState extends State<JobPage> {
                     GestureDetector(
                       onTap: _launchURLM,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -252,30 +208,19 @@ class _JobPageState extends State<JobPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Manager',
-                              style: GoogleFonts.firaSans(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 20,
-                                  color: Color(0xff0D0C0C)),
-                            ),
-                          ],
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image:
+                                    AssetImage('android/assets/manager.png'))),
                       ),
                     ),
                     GestureDetector(
                       onTap: _launchURLSC,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -283,15 +228,10 @@ class _JobPageState extends State<JobPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'Standup Comedy',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'android/assets/standup comedian.png'))),
                       ),
                     ),
                   ],

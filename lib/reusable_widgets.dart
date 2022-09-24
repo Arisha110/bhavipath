@@ -133,19 +133,21 @@ Container branch(String name) {
       borderRadius: BorderRadius.all(
         Radius.circular(10.0),
       ),
-      color: Color(0xff001039),
+      color: Color(0xffE1E0EB),
     ),
     child: Row(
       children: [
         Text(
           "${name}",
           style: GoogleFonts.firaSans(
-              fontWeight: FontWeight.w400, fontSize: 20, color: Colors.white),
+              fontWeight: FontWeight.w400,
+              fontSize: 20,
+              color: Color(0xff01091d)),
         ),
         Expanded(child: Container()),
         Icon(
           Icons.arrow_forward_ios,
-          color: Colors.white,
+          color: Color(0xff01091d),
         ),
       ],
     ),

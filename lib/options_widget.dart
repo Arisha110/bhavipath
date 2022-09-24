@@ -61,7 +61,7 @@ class OptionsWidget extends StatelessWidget {
     if (!isSelected) {
       return Colors.grey.shade200;
     } else {
-      return Colors.green;
+      return Colors.blueAccent;
     }
   }
 }

@@ -55,11 +55,11 @@ class _NavPageState extends State<NavPage> {
               tabs: [
                 GButton(
                   icon: Icons.home,
-                  text: "Home",
+                  text: "Development",
                 ),
                 GButton(
-                  icon: Icons.search,
-                  text: "Search",
+                  icon: Icons.edit_rounded,
+                  text: "Courses",
                   onPressed: () {
                     //   Navigator.push(
                     //       context,
@@ -69,8 +69,8 @@ class _NavPageState extends State<NavPage> {
                   },
                 ),
                 GButton(
-                  icon: Icons.settings,
-                  text: "Settings",
+                  icon: Icons.event_note_rounded,
+                  text: "Notes",
                   onPressed: () {
                     // Navigator.push(
                     //     context,

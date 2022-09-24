@@ -29,7 +29,7 @@ class _ExamPageState extends State<ExamPage> {
   }
 
   _launchURLCLAT() async {
-    var url = Uri.parse("https://consortiumofnlus.ac.in/ ");
+    var url = Uri.parse("https://law.careers360.com/exams/clat");
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
@@ -77,10 +77,10 @@ class _ExamPageState extends State<ExamPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff01091d),
       appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Color(0xff01091d),
           title: Container(
             padding: EdgeInsets.all(90),
             child: Text(
@@ -88,7 +88,7 @@ class _ExamPageState extends State<ExamPage> {
               style: GoogleFonts.firaSans(
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
-                  color: Color(0xff0D0C0C)),
+                  color: Color(0xffE1E0EB)),
             ),
           )),
       body: Container(
@@ -104,11 +104,10 @@ class _ExamPageState extends State<ExamPage> {
                     GestureDetector(
                       onTap: _launchURLCMAT,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -116,25 +115,18 @@ class _ExamPageState extends State<ExamPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'CMAT',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage('android/assets/CMAT.png'))),
                       ),
                     ),
                     GestureDetector(
                       onTap: _launchURLCLAT,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -142,15 +134,9 @@ class _ExamPageState extends State<ExamPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'CLAT',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage('android/assets/CLAT.png'))),
                       ),
                     ),
                   ],
@@ -160,11 +146,10 @@ class _ExamPageState extends State<ExamPage> {
                     GestureDetector(
                       onTap: _launchURLGRE,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -172,25 +157,18 @@ class _ExamPageState extends State<ExamPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'GRE',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage('android/assets/GRE.png'))),
                       ),
                     ),
                     GestureDetector(
                       onTap: _launchURLUP,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -198,15 +176,10 @@ class _ExamPageState extends State<ExamPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'UPSC CSE',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image:
+                                    AssetImage('android/assets/UPSC CSE.png'))),
                       ),
                     ),
                   ],
@@ -216,11 +189,10 @@ class _ExamPageState extends State<ExamPage> {
                     GestureDetector(
                       onTap: _launchURLGATE,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -228,30 +200,18 @@ class _ExamPageState extends State<ExamPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'GATE',
-                              style: GoogleFonts.firaSans(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 20,
-                                  color: Color(0xff0D0C0C)),
-                            ),
-                          ],
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage('android/assets/GATE.png'))),
                       ),
                     ),
                     GestureDetector(
                       onTap: _launchURLCAT,
                       child: Container(
-                        height: 190,
+                        height: 160,
                         width: 160,
-                        margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                        margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
@@ -259,15 +219,9 @@ class _ExamPageState extends State<ExamPage> {
                                 blurRadius: 4.0,
                                 spreadRadius: .05,
                               )
-                            ]),
-                        child: Center(
-                            child: Text(
-                          'CAT',
-                          style: GoogleFonts.firaSans(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xff0D0C0C)),
-                        )),
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage('android/assets/CAT.png'))),
                       ),
                     ),
                   ],

@@ -9,7 +9,7 @@ class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFB4F6E6),
+      backgroundColor: Color(0xFF01091d),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
@@ -17,8 +17,11 @@ class TasksScreen extends StatelessWidget {
             builder: (context) => AddTaskScreen(),
           );
         },
-        backgroundColor: Color(0xFF192233),
-        child: Icon(Icons.add),
+        backgroundColor: Color(0xFF001039),
+        child: Icon(
+          Icons.add,
+          color: Color(0xffE1E0EB),
+        ),
       ),
       body: Container(
         padding:
@@ -29,21 +32,14 @@ class TasksScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                Icon(
-                  Icons.list,
-                  size: 30.0,
-                ),
-                SizedBox(
-                  width: 30.0,
-                ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Todoey',
+                      'To-do list',
                       style: TextStyle(
                         fontSize: 25.0,
-                        color: Color(0xFF192233),
+                        color: Color(0xffE1E0EB),
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -53,7 +49,7 @@ class TasksScreen extends StatelessWidget {
                     Text(
                       '${Provider.of<TaskData>(context).taskCount} Tasks',
                       style: TextStyle(
-                        color: Color(0xFF192233),
+                        color: Color(0xffE1E0EB),
                       ),
                     )
                   ],
@@ -69,7 +65,7 @@ class TasksScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 45.0),
                   height: 600.0,
                   decoration: BoxDecoration(
-                    color: Colors.white54,
+                    color: Color(0xffE1E0EB),
                     borderRadius: BorderRadius.all(
                       Radius.circular(20.0),
                     ),

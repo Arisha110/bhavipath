@@ -17,8 +17,10 @@ class _EngPageState extends State<EngPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff01091d),
       appBar: AppBar(
-        title: Text('Engineering'),
+        title: Text('Engineering', style: TextStyle(color: Color(0xffE1E0EB))),
+        backgroundColor: Color(0xff01091d),
       ),
       body: Container(
           width: double.infinity,
@@ -37,42 +39,25 @@ class _EngPageState extends State<EngPage> {
                               builder: (context) => BranchPage()));
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                      height: 160,
+                      width: 160,
+                      margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(.1),
-                              blurRadius: 4.0,
-                              spreadRadius: .05,
-                            )
-                          ]),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                              height: 100,
-                              width: 150,
-                              child: Image(
-                                image:
-                                    AssetImage("android/assets/Group 14.png"),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          Text("Branches"),
-                          Text(
-                            'in Engineering',
-                            style: Theme.of(context).textTheme.bodySmall,
+                        // color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(.1),
+                            blurRadius: 4.0,
+                            spreadRadius: .05,
                           )
                         ],
+                        image: DecorationImage(
+                            // fit: BoxFit.fill,
+                            image: AssetImage('android/assets/branches.png')),
                       ),
+                      child: Container(
+                          height: 50, width: 50, decoration: BoxDecoration()),
                     ),
                   ),
                   GestureDetector(
@@ -81,42 +66,25 @@ class _EngPageState extends State<EngPage> {
                           MaterialPageRoute(builder: (context) => SkillPage()));
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                      height: 160,
+                      width: 160,
+                      margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(.1),
-                              blurRadius: 4.0,
-                              spreadRadius: .05,
-                            )
-                          ]),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                              height: 100,
-                              width: 150,
-                              child: Image(
-                                image:
-                                    AssetImage("android/assets/Group 14.png"),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          Text("Skills"),
-                          Text(
-                            'to develop',
-                            style: Theme.of(context).textTheme.bodySmall,
+                        // color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(.1),
+                            blurRadius: 4.0,
+                            spreadRadius: .05,
                           )
                         ],
+                        image: DecorationImage(
+                            // fit: BoxFit.fill,
+                            image: AssetImage('android/assets/skills.png')),
                       ),
+                      child: Container(
+                          height: 50, width: 50, decoration: BoxDecoration()),
                     ),
                   ),
                 ],
@@ -129,42 +97,25 @@ class _EngPageState extends State<EngPage> {
                           MaterialPageRoute(builder: (context) => ExamPage()));
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                      height: 160,
+                      width: 160,
+                      margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(.1),
-                              blurRadius: 4.0,
-                              spreadRadius: .05,
-                            )
-                          ]),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                              height: 100,
-                              width: 150,
-                              child: Image(
-                                image:
-                                    AssetImage("android/assets/Group 14.png"),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          Text("Higher Studies"),
-                          Text(
-                            'in Engineering',
-                            style: Theme.of(context).textTheme.bodySmall,
+                        // color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(.1),
+                            blurRadius: 4.0,
+                            spreadRadius: .05,
                           )
                         ],
+                        image: DecorationImage(
+                            // fit: BoxFit.fill,
+                            image: AssetImage('android/assets/Exams.png')),
                       ),
+                      child: Container(
+                          height: 50, width: 50, decoration: BoxDecoration()),
                     ),
                   ),
                   GestureDetector(
@@ -173,42 +124,26 @@ class _EngPageState extends State<EngPage> {
                           MaterialPageRoute(builder: (context) => JobPage()));
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.fromLTRB(20, 20, 10, 20),
+                      height: 160,
+                      width: 160,
+                      margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(.1),
-                              blurRadius: 4.0,
-                              spreadRadius: .05,
-                            )
-                          ]),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                              height: 100,
-                              width: 150,
-                              child: Image(
-                                image:
-                                    AssetImage("android/assets/Group 14.png"),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          Text("Job Opportunities"),
-                          Text(
-                            'to develop',
-                            style: Theme.of(context).textTheme.bodySmall,
+                        // color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(.1),
+                            blurRadius: 4.0,
+                            spreadRadius: .05,
                           )
                         ],
+                        image: DecorationImage(
+                            // fit: BoxFit.fill,
+                            image: AssetImage(
+                                'android/assets/job opportunities.png')),
                       ),
+                      child: Container(
+                          height: 50, width: 50, decoration: BoxDecoration()),
                     ),
                   ),
                 ],

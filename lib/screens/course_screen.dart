@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import '../blank.dart';
 import '../courses/extra.dart';
@@ -10,6 +11,8 @@ import '../courses/extra2.dart';
 import '../eng/engpage.dart';
 import '../helper.dart';
 import '../pagestate.dart';
+import '../to-do/task_data.dart';
+import '../to-do/task_screen.dart';
 import '../widgets/category_card.dart';
 import '../widgets/circle_button.dart';
 import '../models/category.dart';
@@ -33,7 +36,7 @@ class _CourseScreenState extends State<CourseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: Drawer(
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xffE1E0EB),
           child: Column(children: [
             Container(
               width: double.infinity,
@@ -78,42 +81,42 @@ class _CourseScreenState extends State<CourseScreen> {
               leading: IconButton(
                 color: Color(0xff131040),
                 onPressed: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => ProfileScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CourseScreen()));
                 },
-                icon: Icon(Icons.person),
+                icon: Icon(Icons.home),
               ),
               title: Text(
-                "Profile",
+                "Home",
                 style: TextStyle(fontSize: 16, color: Color(0xff131040)),
               ),
             ),
+            // ListTile(
+            //   leading: IconButton(
+            //       icon: Icon(Icons.event_note_rounded),
+            //       color: Color(0xff131040),
+            //       onPressed: () {
+            //         ChangeNotifierProvider(
+            //           create: (context) => TaskData(),
+            //           child: MaterialApp(
+            //             debugShowCheckedModeBanner: false,
+            //             home: TasksScreen(),
+            //           ),
+            //         );
+            //       }),
+            //   title: Text(
+            //     "Notes",
+            //     style: TextStyle(fontSize: 16, color: Color(0xff131040)),
+            //   ),
+            // ),
             ListTile(
               leading: IconButton(
-                icon: Icon(Icons.settings),
-                color: Color(0xff131040),
-                onPressed: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => SettingsScreen()));
-                },
-              ),
-              title: Text(
-                "Settings",
-                style: TextStyle(fontSize: 16, color: Color(0xff131040)),
-              ),
-            ),
-            ListTile(
-              leading: IconButton(
-                icon: Icon(Icons.help),
+                icon: Icon(Icons.subscriptions),
                 color: Color(0xff131040),
                 onPressed: () {},
               ),
               title: Text(
-                "Help",
+                "Subscriptions",
                 style: TextStyle(fontSize: 16, color: Color(0xff131040)),
               ),
             ),
@@ -182,204 +185,114 @@ class Body extends StatelessWidget {
         color: Color(0xff01091d),
         // image: DecorationImage(image: AssetImage("android/assets/a[[.png")),
       ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Explore Categories',
-                    style: TextStyle(
-                      color: Color(0xffE1E0EB),
-                      fontSize: 17,
-                    )),
-                TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'See All',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium
-                          ?.copyWith(color: Colors.white),
-                    ))
-              ],
-            ),
+      child: Column(children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Explore Categories',
+                  style: TextStyle(
+                    color: Color(0xffE1E0EB),
+                    fontSize: 17,
+                  )),
+              TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'See All',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: Color(0xffE1E0EB)),
+                  ))
+            ],
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: Color(0xff01091d),
-              // image: DecorationImage(image: AssetImage("android/assets/a[[.png")),
-            ),
-            width: double.infinity,
-            height: 450,
-            child: SingleChildScrollView(
-              child: Container(
-                child: Column(
-                  children: [
-                    SizedBox(height: 10),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => EngPage()));
-                          },
-                          child: Container(
-                            height: 190,
-                            width: 160,
-                            margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
-                            decoration: BoxDecoration(
-                              // color: Color(0xff001091d),
-                              borderRadius: BorderRadius.circular(32),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(.1),
-                                  blurRadius: 4.0,
-                                  spreadRadius: .05,
-                                )
-                              ],
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                      'android/assets/eng card2.png')),
-                            ),
-                            child: Container(
-                                height: 200,
-                                width: 200,
-                                decoration: BoxDecoration()),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Color(0xff01091d),
+            // image: DecorationImage(image: AssetImage("android/assets/a[[.png")),
+          ),
+          width: double.infinity,
+          height: 450,
+          child: SingleChildScrollView(
+            child: Container(
+              child: Column(
+                children: [
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EngPage()));
+                        },
+                        child: Container(
+                          height: 160,
+                          width: 160,
+                          margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
+                          decoration: BoxDecoration(
+                            // color: Color(0xff001091d),
+                            borderRadius: BorderRadius.circular(32),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(.1),
+                                blurRadius: 4.0,
+                                spreadRadius: .05,
+                              )
+                            ],
+                            image: DecorationImage(
+                                // fit: BoxFit.fill,
+                                image:
+                                    AssetImage('android/assets/eng card2.png')),
                           ),
-                        ),
-                        GestureDetector(
-                          onTap: () {},
                           child: Container(
-                            height: 190,
-                            width: 160,
-                            margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
-                            decoration: BoxDecoration(
-                              // color: Color(0xff001091d),
-                              borderRadius: BorderRadius.circular(33),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(.1),
-                                  blurRadius: 4.0,
-                                  spreadRadius: .05,
-                                )
-                              ],
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                      'android/assets/med card.png')),
-                            ),
-                            child: Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration()),
+                              height: 200,
+                              width: 200,
+                              decoration: BoxDecoration()),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 160,
+                          width: 160,
+                          margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
+                          decoration: BoxDecoration(
+                            // color: Color(0xff001091d),
+                            borderRadius: BorderRadius.circular(33),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(.1),
+                                blurRadius: 4.0,
+                                spreadRadius: .05,
+                              )
+                            ],
+                            image: DecorationImage(
+                                // fit: BoxFit.fill,
+                                image:
+                                    AssetImage('android/assets/med card.png')),
                           ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
                           child: Container(
-                              height: 190,
-                              width: 160,
-                              margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
-                              decoration: BoxDecoration(
-                                // color: Color(0xff001091d),
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(.1),
-                                    blurRadius: 4.0,
-                                    spreadRadius: .05,
-                                  )
-                                ],
-                                image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        'android/assets/law card2.png')),
-                              ),
-                              child: Container(
-                                  height: 50,
-                                  width: 50,
-                                  decoration: BoxDecoration())),
-                        ),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            height: 190,
-                            width: 160,
-                            margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
-                            decoration: BoxDecoration(
-                              // color: Color(0xff001091d),
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(.1),
-                                  blurRadius: 4.0,
-                                  spreadRadius: .05,
-                                )
-                              ],
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                      'android/assets/hum card2.png')),
-                            ),
-                            child: Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration()),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            height: 190,
-                            width: 160,
-                            margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
-                            decoration: BoxDecoration(
-                              color: Color(0xff001039),
-                              borderRadius: BorderRadius.circular(32),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(.1),
-                                  blurRadius: 4.0,
-                                  spreadRadius: .05,
-                                ),
-                              ],
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                      'android/assets/mgmt card2.png')),
-                            ),
-                            child: Container(
                               height: 50,
                               width: 50,
-                            ),
-                          ),
+                              decoration: BoxDecoration()),
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Extra2()));
-                          },
-                          child: Container(
-                            height: 190,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                            height: 160,
                             width: 160,
-                            margin: const EdgeInsets.fromLTRB(30, 20, 10, 20),
+                            margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
                             decoration: BoxDecoration(
-                              // color: Color(0xff001039),
+                              // color: Color(0xff001091d),
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
@@ -389,58 +302,138 @@ class Body extends StatelessWidget {
                                 )
                               ],
                               image: DecorationImage(
-                                  fit: BoxFit.fill,
+                                  // fit: BoxFit.fill,
                                   image: AssetImage(
-                                      'android/assets/oth card.png')),
+                                      'android/assets/law card2.png')),
                             ),
                             child: Container(
                                 height: 50,
                                 width: 50,
-                                decoration: BoxDecoration()),
+                                decoration: BoxDecoration())),
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 160,
+                          width: 160,
+                          margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
+                          decoration: BoxDecoration(
+                            // color: Color(0xff001091d),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(.1),
+                                blurRadius: 4.0,
+                                spreadRadius: .05,
+                              )
+                            ],
+                            image: DecorationImage(
+                                // fit: BoxFit.fill,
+                                image:
+                                    AssetImage('android/assets/hum card2.png')),
+                          ),
+                          child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration()),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 160,
+                          width: 160,
+                          margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
+                          decoration: BoxDecoration(
+                            color: Color(0xff001039),
+                            borderRadius: BorderRadius.circular(32),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(.1),
+                                blurRadius: 4.0,
+                                spreadRadius: .05,
+                              ),
+                            ],
+                            image: DecorationImage(
+                                // fit: BoxFit.fill,
+                                image: AssetImage(
+                                    'android/assets/mgmt card2.png')),
+                          ),
+                          child: Container(
+                            height: 50,
+                            width: 50,
                           ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Container(
-            width: 150,
-            height: 50,
-            margin: const EdgeInsets.fromLTRB(0, 20, 0, 10),
-            child: ElevatedButton(
-              onPressed: () {
-                // onTap();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PageState()));
-              },
-              child: Center(
-                child: Text(
-                  'Take the Quiz',
-                  style: const TextStyle(
-                    color: Color(0xff01091d),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Extra()));
+                        },
+                        child: Container(
+                          height: 160,
+                          width: 160,
+                          margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
+                          decoration: BoxDecoration(
+                            // color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(.1),
+                                blurRadius: 4.0,
+                                spreadRadius: .05,
+                              )
+                            ],
+                            image: DecorationImage(
+                                // fit: BoxFit.fill,
+                                image:
+                                    AssetImage('android/assets/oth card.png')),
+                          ),
+                          child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration()),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
+                ],
               ),
-              style: ButtonStyle(
-                  shadowColor: MaterialStateProperty.all<Color>(Colors.black),
-                  backgroundColor: MaterialStateProperty.resolveWith((states) {
-                    if (states.contains(MaterialState.pressed)) {
-                      return Colors.black;
-                    }
-                    return Color(0xffE1E0EB);
-                  }),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)))),
             ),
           ),
-        ],
-      ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => PageState()));
+          },
+          child: Container(
+            height: 40,
+            width: 120,
+            margin: const EdgeInsets.fromLTRB(30, 20, 0, 20),
+            decoration: BoxDecoration(
+              // color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(.1),
+                  blurRadius: 4.0,
+                  spreadRadius: .05,
+                )
+              ],
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage('android/assets/quiz card.png')),
+            ),
+            child:
+                Container(height: 50, width: 50, decoration: BoxDecoration()),
+          ),
+        ),
+      ]),
     );
   }
 }

@@ -229,7 +229,7 @@ class _DesignPageState extends State<DesignPage> {
                               )
                             ],
                             image: DecorationImage(
-                                fit: BoxFit.fill,
+                                // fit: BoxFit.fill,
                                 image:
                                     AssetImage('android/assets/id card.png'))),
                       ),

@@ -45,6 +45,7 @@ class HomeScreen extends StatelessWidget {
               child: Center(
                 child: SingleChildScrollView(
                   child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
                     height: 300,
                     width: 324,
                     decoration: BoxDecoration(
@@ -67,10 +68,20 @@ class HomeScreen extends StatelessWidget {
                               color: Color(0xff0D0C0C)),
                         ),
                         SizedBox(
-                          height: 37,
+                          height: 20,
                         ),
                         // reusableTextField(
                         //     " email", Icons.mail, false, _emailController),
+                        Text(
+                          "Thank you for taking the quiz! You have just moved up the first step to attain the pinnacles of future. Here is the right course created for your bright career.",
+                          style: GoogleFonts.firaSans(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13,
+                              color: Color(0xff0D0C0C)),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
                         Container(
                           width: 200,
                           height: 50,

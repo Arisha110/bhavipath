@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../helper.dart';
 import '../screens/course_screen.dart';
@@ -17,6 +18,16 @@ class ProgrammingPage extends StatefulWidget {
 }
 
 class _ProgrammingPageState extends State<ProgrammingPage> {
+  _launchURLBC() async {
+    var url = Uri.parse(
+        "https://www.geeksforgeeks.org/complete-roadmap-to-learn-dsa-from-scratch/");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,10 +166,7 @@ class _ProgrammingPageState extends State<ProgrammingPage> {
             Row(
               children: [
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Android()));
-                  },
+                  onTap: _launchURLBC,
                   child: Container(
                     height: 160,
                     width: 160,
